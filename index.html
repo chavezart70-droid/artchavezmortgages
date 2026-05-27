@@ -167,7 +167,7 @@ section.band{padding:100px 0;position:relative;overflow:hidden}
 .contact-info{display:grid;gap:15px;margin-top:28px}
 .contact-info .ci{display:flex;align-items:center;gap:13px;color:var(--w-intro);font-weight:600;font-size:1rem}
 .contact-info .ci svg{color:var(--gold-2);flex:none}
-.contact-actions{display:flex;flex-direction:column;gap:14px;max-width:380px;justify-self:end;width:100%}
+.contact-actions{display:flex;flex-direction:column;gap:14px;max-width:380px;justify-self:end;width:100%;margin-left:auto;margin-right:auto}
 .contact-actions .btn{width:100%;padding:18px 26px;font-size:.92rem}
 
 /* FOOTER */
@@ -224,7 +224,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
 .calc-card th:first-child,.calc-card td:first-child{text-align:center}
 .calc-card td{padding:10px 12px;text-align:right;color:var(--w-intro);border-top:1px solid var(--line-d);font-weight:500}
 .calc-card tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-@media(max-width:680px){.field-grid{grid-template-columns:1fr}.calc-card{padding:28px 20px}.cresult-hero .rv{font-size:2.2rem}}
+@media(max-width:680px){.field-grid{grid-template-columns:1fr}.calc-card{padding:26px 16px;overflow:hidden}.cresult-hero .rv{font-size:1.9rem;word-break:break-word}.rstat .v{font-size:1.2rem;word-break:break-word}.cresult-grid{grid-template-columns:1fr 1fr;gap:10px}.rstat{padding:14px 10px}}
 
 /* RESPONSIVE */
 @media(max-width:1180px){
@@ -232,6 +232,11 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .hamb{display:flex}
 }
 @media(max-width:900px){
+  /* Compact brand on mobile: name + single tight subtitle line */
+  .brand .bn{font-size:1.05rem;line-height:1.1}
+  .brand .bs{font-size:.58rem;letter-spacing:.08em;white-space:nowrap;margin-top:2px;display:block}
+  .brand .bn2{display:inline;margin-top:0;margin-left:6px;font-size:.58rem;letter-spacing:.08em;color:var(--w-tag)}
+  .brand .bn2::before{content:"\B7  ";color:var(--gold);margin-right:3px}
   .about-grid{grid-template-columns:1fr}
   .hero{min-height:auto;grid-template-columns:1fr;padding:0;margin-top:84px;background:var(--navy)}
   .hero-photo{height:auto;max-height:none;grid-column:1;grid-row:auto}
@@ -245,7 +250,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .calc,.contact-grid{grid-template-columns:1fr;gap:30px}
   .calc{padding:40px 30px}
   .calc-right{justify-content:center}
-  .contact-actions{justify-self:start}
+  .contact-actions{justify-self:center;margin:0 auto}
 }
 @media(max-width:680px){
   *{max-width:100%!important}
@@ -268,15 +273,18 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .hero-content{overflow-wrap:normal;max-width:100%}
   .hero-intro,.hero-sub,.hero p{overflow-wrap:normal;word-break:normal;max-width:100%}
   .badge-line,.hero .badge,[class*="badge"]{font-size:1.4rem!important;overflow-wrap:normal;word-break:normal;max-width:100%}
-  .brand .bn{font-size:1.15rem}
-  .brand .bs{font-size:.54rem;letter-spacing:.08em;white-space:normal}
-  .brand .bn2{font-size:.54rem;letter-spacing:.06em}
-  .brand{margin-right:10px}
-  .nav-right{gap:8px}
-  .langtoggle button{padding:5px 9px;font-size:.68rem}
+  .brand .bn{font-size:.95rem}
+  .brand .bs{font-size:.46rem;letter-spacing:.02em;white-space:nowrap}
+  .brand .bn2{font-size:.46rem;letter-spacing:.01em;margin-left:4px;white-space:nowrap}
+  .brand{margin-right:6px;min-width:0;flex-shrink:1}
+  .nav-right{gap:6px;flex-shrink:0}
+  .tel-mobile{font-size:.7rem;margin-right:2px}
+  .tel-mobile b{font-size:.74rem}
+  .tel-mobile svg{width:10px;height:10px}
+  .langtoggle button{padding:4px 7px;font-size:.62rem}
   .hamb{display:flex;flex:none;padding:10px;margin:-6px;min-width:44px;min-height:44px;align-items:center;justify-content:center;z-index:210;position:relative}
   .nav{gap:6px}
-  .contact-actions{justify-self:stretch;max-width:100%}
+  .contact-actions{justify-self:center;max-width:380px;margin:0 auto}
   .nav{width:100%}
   .calc-tabs{width:100%}
   .table-wrap{overflow-x:auto}
@@ -387,23 +395,23 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
     <div class="sec-head reveal">
       <span class="eyebrow"><span class="lang-en">Why a Broker</span><span class="lang-es">Por Qué un Broker</span></span>
       <h2><span class="lang-en">A bank gives you one option. <em>I give you the market.</em></span><span class="lang-es">Un banco le da una opción. <em>Yo le doy el mercado.</em></span></h2>
-      <p><span class="lang-en">As an independent broker, I shop your loan across 220+ lenders, not a single menu. The right loan for your situation, not just the easiest one to close.</span><span class="lang-es">Como broker independiente, busco su préstamo entre más de 220 bancos mayoristas. El préstamo correcto para su situación, no solo el más fácil de cerrar.</span></p>
+      <p><span class="lang-en">As an independent broker, I shop your loan across 220+ lenders, not a single menu. The right loan for your situation, not just the easiest one to close. That difference shows up where it matters most: in the rate you lock, the payment you live with, and whether your offer holds up when it counts.</span><span class="lang-es">Como broker independiente, busco su préstamo entre más de 220 bancos mayoristas. El préstamo correcto para su situación, no solo el más fácil de cerrar. Esa diferencia aparece donde más importa: en la tasa que asegura, el pago con el que vive, y si su oferta se sostiene cuando cuenta.</span></p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
         <h3><span class="lang-en">We shop, you save</span><span class="lang-es">Nosotros buscamos, usted ahorra</span></h3>
-        <p><span class="lang-en">220+ lenders compete for your loan. More options means a better rate and a loan built around your specific mortgage needs.</span><span class="lang-es">Más de 220 bancos mayoristas compiten por su préstamo. Más opciones significan una mejor tasa y un préstamo hecho para sus necesidades hipotecarias específicas.</span></p>
+        <p><span class="lang-en">220+ lenders compete for your loan. More options means a better rate and a loan built around your specific mortgage needs. What looks like a small rate difference becomes thousands of dollars over the life of the loan.</span><span class="lang-es">Más de 220 bancos mayoristas compiten por su préstamo. Más opciones significan una mejor tasa y un préstamo hecho para sus necesidades hipotecarias específicas. Lo que parece una pequeña diferencia en la tasa se convierte en miles de dólares durante la vida del préstamo.</span></p>
       </div>
       <div class="why-card reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <h3><span class="lang-en">Underwritten up front</span><span class="lang-es">Aprobado por adelantado</span></h3>
-        <p><span class="lang-en">Get fully underwritten before you write an offer. Sellers take you seriously. You know your exact budget. No surprises at the table.</span><span class="lang-es">Aprobado completamente antes de hacer una oferta. Los vendedores lo toman en serio. Usted conoce su presupuesto exacto.</span></p>
+        <p><span class="lang-en">Get fully underwritten before you write an offer. Sellers take you seriously. You know your exact budget. No surprises at the table. In a competitive market, that's often the difference between an accepted offer and another rejection.</span><span class="lang-es">Aprobado completamente antes de hacer una oferta. Los vendedores lo toman en serio. Usted conoce su presupuesto exacto. En un mercado competitivo, esa suele ser la diferencia entre una oferta aceptada y otro rechazo.</span></p>
       </div>
       <div class="why-card reveal">
         <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
         <h3><span class="lang-en">Guidance you can trust</span><span class="lang-es">Asesoría en la que puede confiar</span></h3>
-        <p><span class="lang-en">We run the numbers with full transparency. If a loan doesn't make sense for you, we'll tell you.</span><span class="lang-es">Calculamos los números con total transparencia. Si un préstamo no le conviene, se lo decimos.</span></p>
+        <p><span class="lang-en">We run the numbers with full transparency. If a loan doesn't make sense for you, we'll tell you. Twenty years of doing this means I've seen the deals that work, the ones that don't, and the ones that look fine on paper but fall apart at closing. You'll know which one you have before you sign anything.</span><span class="lang-es">Calculamos los números con total transparencia. Si un préstamo no le conviene, se lo decimos. Veinte años haciendo esto significa que he visto los tratos que funcionan, los que no, y los que se ven bien en papel pero se caen al cerrar. Usted sabrá cuál tiene antes de firmar nada.</span></p>
       </div>
     </div>
   </div>
@@ -498,18 +506,6 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   </div>
 </section>
 
-<!-- PROOF -->
-<section class="band band-grad">
-  <div class="wrap">
-    <div class="proof reveal">
-      <div class="stars">★★★★★</div>
-      <p class="quote"><span class="lang-en">“Client reviews go here. This space is reserved for real testimonials from your Google and Zillow profiles.”</span><span class="lang-es">“Las reseñas de clientes van aquí. Espacio reservado para testimonios reales de Google y Zillow.”</span></p>
-      <p class="src lang-en">— Verified Client · Google Reviews</p>
-      <p class="src lang-es">— Cliente Verificado · Reseñas de Google</p>
-      <div class="proof-note"><a href="#contact" class="btn btn-outline"><span class="lang-en">Read Reviews on Google</span><span class="lang-es">Ver Reseñas en Google</span></a></div>
-    </div>
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section class="band band-deep" id="contact">
