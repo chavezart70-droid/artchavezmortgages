@@ -167,8 +167,9 @@ section.band{padding:100px 0;position:relative;overflow:hidden}
 .contact-info{display:grid;gap:15px;margin-top:28px}
 .contact-info .ci{display:flex;align-items:center;gap:13px;color:var(--w-intro);font-weight:600;font-size:1rem}
 .contact-info .ci svg{color:var(--gold-2);flex:none}
-.contact-actions{display:flex;flex-direction:column;gap:14px;max-width:380px;justify-self:end;width:100%;margin-left:auto;margin-right:auto}
+.contact-actions{display:flex;flex-direction:column;gap:14px;max-width:380px;width:100%}
 .contact-actions .btn{width:100%;padding:18px 26px;font-size:.92rem}
+@media(min-width:901px){.contact-actions{justify-self:end}}
 
 /* FOOTER */
 footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(--line-d)}
@@ -250,7 +251,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .calc,.contact-grid{grid-template-columns:1fr;gap:30px}
   .calc{padding:40px 30px}
   .calc-right{justify-content:center}
-  .contact-actions{justify-self:center;margin:0 auto}
+  .contact-actions{justify-self:center}
 }
 @media(max-width:680px){
   *{max-width:100%!important}
@@ -292,7 +293,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .cred-band .c{width:100%;align-items:flex-start;gap:11px;line-height:1.4}
   .cred-band .c .dot{flex:none;margin-top:7px}
   .calc-right .btn{white-space:normal;padding:16px 18px;max-width:100%}
-  .contact-actions{justify-self:center;align-items:stretch;text-align:center;margin-left:auto;margin-right:auto}
+  .contact-actions{justify-self:center;text-align:center}
 }
 </style>
 </head>
