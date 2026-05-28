@@ -167,7 +167,7 @@ section.band{padding:100px 0;position:relative;overflow:hidden}
 .contact-info{display:grid;gap:15px;margin-top:28px}
 .contact-info .ci{display:flex;align-items:center;gap:13px;color:var(--w-intro);font-weight:600;font-size:1rem}
 .contact-info .ci svg{color:var(--gold-2);flex:none}
-.contact-actions{display:flex;flex-direction:column;gap:14px;max-width:380px;width:100%}
+.contact-actions{display:flex;flex-direction:column;gap:14px;width:100%;max-width:min(380px,100%)}
 .contact-actions .btn{width:100%;padding:18px 26px;font-size:.92rem}
 @media(min-width:901px){.contact-actions{justify-self:end}}
 
@@ -248,7 +248,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .hero-content{max-width:100%}
   .why-grid,.loan-grid{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
-  .calc,.contact-grid{grid-template-columns:1fr;gap:30px}
+  .calc,.contact-grid{grid-template-columns:minmax(0,1fr);gap:30px}
   .calc{padding:40px 30px}
   .calc-right{justify-content:center}
   .contact-actions{justify-self:center}
