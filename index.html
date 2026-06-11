@@ -264,7 +264,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
   .nav-desktop-cta{display:none}
   .hamb{display:flex}
   .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100vh;background:#060d18;z-index:200;padding:100px 30px 30px;flex-direction:column;gap:6px;overflow-y:auto}
-  #menu:target{display:flex}
+  .mobile-menu.open{display:flex}
   .mobile-menu a{padding:16px 4px;border-bottom:1px solid var(--line-d);font-weight:700;color:#fff;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase}
   .mobile-menu .btn{margin-top:20px}
   .why-grid,.loan-grid,.steps{grid-template-columns:1fr}
@@ -328,7 +328,7 @@ footer{background:var(--navy-deep);padding:60px 0 44px;border-top:1px solid var(
       <span class="tel-top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span class="lang-en">Call or Text · </span><span class="lang-es">Llama · </span><b>971-837-5296</b></span>
       <div class="langtoggle"><button id="en" class="active" onclick="setLang('en')">EN</button><button id="es" onclick="setLang('es')">ES</button></div>
       <a href="https://artchavezmtgs.my1003app.com/290748/register" target="_blank" rel="noopener" class="btn btn-gold nav-desktop-cta apply-link"><span class="lang-en">Get Pre-Approved</span><span class="lang-es">Pre-Aprobación</span></a>
-      <a class="hamb" href="#menu" aria-label="Menu" role="button"><span></span><span></span><span></span></a>
+      <a class="hamb" href="#menu" aria-label="Menu" role="button" onclick="toggleMenu(event)"><span></span><span></span><span></span></a>
     </div>
   </div>
 </header>
@@ -738,21 +738,26 @@ function setLang(l){
   var url=(l==='es')?base+'?POSAppLanguage=ES':base;
   document.querySelectorAll('a[href^="https://artchavezmtgs.my1003app.com/290748/register"]').forEach(function(a){a.href=url;});
 }
-function closeDrawer(){
-  if(history.replaceState){history.replaceState(null,'',location.pathname+location.search);}
-  else{location.hash='';}
+function toggleMenu(e){
+  if(e)e.preventDefault();
+  var d=document.getElementById('menu');
+  if(d)d.classList.toggle('open');
+}
+function closeMenu(){
+  var d=document.getElementById('menu');
+  if(d)d.classList.remove('open');
 }
 function goTop(e){
   if(e)e.preventDefault();
-  closeDrawer();
+  closeMenu();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function goSection(e,id){
   if(e)e.preventDefault();
-  closeDrawer();
+  closeMenu();
   var el=document.getElementById(id);
   if(el){
-    var y=el.getBoundingClientRect().top+window.pageYOffset-92;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-88;
     window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
   }
 }
